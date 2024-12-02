@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria de Filmes</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script> 
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img class="imgLogo" src="/img/logo.png">
+    </div>
+        <div class="search-bar">
+      <input type="text" placeholder="Buscar...">
+    </div>
+    <div class="links">
+      <a href="/filmes">Filmes</a>
+      <a href="/series">Séries</a>
+      <a href="/animes">Animes</a>
+    </div>
+  </nav>
+
+  <div class="banner">
+    <div>
+      <h2>Galeria de Filmes, Séries e Animes</h2>
+  <div class="cadastro-buttons">
+    <a href="/cadastro">Cadastrar Filme</a>
+  </div>
+
+    </div>
+  </div>
+
+  <div class="carousel-container">
+    <h3>Filmes</h3>
+    <div class="carousel-wrapper">
+      <button class="carousel-button left" id="prev-filmes">◀</button>
+      <div class="carousel" id="carousel-filmes">
+        <% filmes.forEach(filme => { %>
+          <div class="card">
+            <img src="<%= filme.imagem %>" alt="<%= filme.titulo %>" class="card-image">
+            <h3 class="card-title"><%= filme.titulo %> (<%= filme.ano %>)</h3>
+            <p class="card-genre">Gênero: <%= filme.genero %></p>
+          </div>
+        <% }); %>
+      </div>
+      <button class="carousel-button right" id="next-filmes">▶</button>
+    </div>
+  </div>
+</body>
+</html>
